@@ -9,10 +9,20 @@ namespace ToDoApp.Pages
     public class ContactModel : PageModel
     {
         public string Message { get; set; }
+        public string TodayDate{ get; set; }
+        public string EmailAdress { get; set; }
 
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "Contact data:";
+            TodayDate = DateTime.Today.ToString("d");
+            EmailAdress = "lukasz@kapinski.pl";
         }
+
+        public string GetDate()
+        {
+            return TodayDate;
+        }
+      
     }
 }
